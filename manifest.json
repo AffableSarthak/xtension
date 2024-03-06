@@ -1,0 +1,28 @@
+{
+    "manifest_version": 3,
+    "name": "xTension",
+    "description": "Bookmark reddit posts with ease!",
+    "version": "1.0",
+    "host_permissions": [
+      "http://localhost:6969/"
+    ],
+    "permissions": [
+      "tabs",
+      "storage",
+      "activeTab",
+      "cookies",
+      "http://localhost:6969"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.reddit.com/r/*"],
+        "js": ["content.js"]
+      }
+    ] 
+  }
